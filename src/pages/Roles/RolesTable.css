@@ -1,0 +1,23 @@
+
+.table-buttons {
+    display: flex;
+    gap: 8px; /* Adjust gap as needed */
+  }
+  
+  .table-buttons button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .table-buttons button:first-child {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .table-buttons button:last-child {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  

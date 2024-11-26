@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { UserProvider } from "./context/UserContext";
+import { RoleProvider } from "./context/RoleContext";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import UsersPage from "./pages/Users/UsersPage";
+import RolesPage from "./pages/Roles/RolesPage";
+import "./App.css";
+import Footer from "./components/Footer/Footer";
 
-function App() {
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>VRV Security’s Frontend Developer Intern Assignment</h1>
+      <UserProvider>
+        <RoleProvider>
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/users" element={<UsersPage />} />
+              <Route path="/roles" element={<RolesPage />} />
+            </Routes>
+        </RoleProvider>
+      </UserProvider>
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
